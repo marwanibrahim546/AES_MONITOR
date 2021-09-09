@@ -1,16 +1,16 @@
 class AES_monitor_before extends uvm_monitor;   // the result monitor 
 
 	`uvm_component_utils(AES_monitor_before) 
- 
+
+// declare the interface and the analysis port 
 virtual AES_if vif; 
 uvm_analysis_port#(AES_transaction) mon_ap_before ;     
 
-
 function new(string name,uvm_component parent);
 	super.new(name, parent);
-endfunction: new
+endfunction: new 
 
-// build the interface and the analysis port 
+// instantiate the analysis port  and get the interface value 
 function void build_phase(uvm_phase phase);
 	super.build_phase(phase);
 
@@ -47,7 +47,7 @@ uvm_analysis_port#(simpleadder_transaction) mon_ap_after;
 
 function new(string name, uvm_component parent);
 	super.new(name, parent);
-	simpleadder_cg = new;            ///////??????????//////<<<<<<<<<<<<<<<<<<
+	simpleadder_cg = new;      //*??
 endfunction: new
 
 
